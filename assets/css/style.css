@@ -4,10 +4,12 @@
     box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
 }
-header{
-    max-width:100% ;
+
+header {
+    max-width: 100%;
     display: block;
 }
+
 .c-container {
     width: 1253px;
     margin: 0 auto;

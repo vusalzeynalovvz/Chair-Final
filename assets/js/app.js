@@ -50,3 +50,18 @@ const updateCountdown = () => {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const remove = document.getElementById('menu-remove');
+const burger = document.getElementById('menu-burger');
+const line_menu = document.getElementById('menu-line');
+
+line_menu.addEventListener('click', function () {
+    if (burger.style.display === 'none') {
+        burger.style.display = 'block';
+        remove.addEventListener('click', function () {
+            burger.style.display = 'none';
+        })
+    } else {
+        burger.style.display = 'none';
+    }
+
+})

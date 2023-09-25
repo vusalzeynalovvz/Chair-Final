@@ -4,6 +4,7 @@ const salam = document.getElementById('salam');
 const usd_click = document.getElementById('usd_click');
 const arrow = document.getElementById('arrow');
 const usd_arrow = document.getElementById('usd_arrow');
+
 english.addEventListener('click', function () {
     if (salam.style.display === 'none') {
         salam.style.display = 'block';
@@ -48,3 +49,4 @@ const updateCountdown = () => {
 };
 updateCountdown();
 setInterval(updateCountdown, 1000);
+

@@ -65,3 +65,6 @@ line_menu.addEventListener('click', function () {
     }
 
 })
+
+AOS.init();
+

@@ -51,9 +51,9 @@ const buttons = document.querySelectorAll('.btn');
 for (const btn of buttons) {
     btn.onclick = function (e) {
         e.preventDefault();
-        const pr_name = document.querySelector('.product-name').innerHTML;
-        const pr_price = document.querySelector('.product-price').innerHTML;
-        const pr_img = document.querySelector('.product-img').src;
+        const pr_name = this.parentElement.parentElement.parentElement.parentElement.lastElementChild.previousElementSibling.innerHTML;
+        const pr_price = this.parentElement.parentElement.parentElement.parentElement.lastElementChild.innerHTML;
+        const pr_img = this.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.getAttribute('src');
 
         const basket = JSON.parse(localStorage.getItem('card'));
 

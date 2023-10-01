@@ -63,9 +63,12 @@ basket.forEach(item => {
             <span class="border-[1px] border-none p-[5px] text-[#9a884b] bg-[#f7f5ef] rounded-[5px]">In
                 Stock</span>
             <img class="w-[32px] h-[32px]" src="/assets/image/img.icons5.png" alt="araba">
-            <img data-id="${item.id}" class="fill-white" src="/assets/image/ikis.png" alt="">
+            <i data-id="${item.id}" class="fa-solid fa-x cursor-pointer"></i>
         </div>
     </div>
 </div>
     `
+
 });
+
+

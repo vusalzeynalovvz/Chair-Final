@@ -41,4 +41,43 @@ line_menu.addEventListener('click', function () {
 
 })
 
-  AOS.init();
+AOS.init();
+
+if (localStorage.getItem('card') === null) {
+    localStorage.setItem('card', JSON.stringify([]));
+}
+
+const buttons = document.querySelectorAll('.btn');
+for (const btn of buttons) {
+    btn.onclick = function (e) {
+        e.preventDefault();
+        const pr_name = document.querySelector('.product-name').innerHTML;
+        const pr_price = document.querySelector('.product-price').innerHTML;
+        const pr_img = document.querySelector('.product-img').src;
+
+        const basket = JSON.parse(localStorage.getItem('card'));
+
+        const exist_prod = basket.find(pr => pr.name === pr_name);
+
+        if (exist_prod === undefined) {
+            basket.push({
+                name: pr_name,
+                price: pr_price,
+                img: pr_img,
+                Count: 1
+            });
+        } else {
+            exist_prod.Count++;
+        }
+
+
+        localStorage.setItem('card', JSON.stringify(basket));
+        BasketCount();
+    }
+}
+
+function BasketCount() {
+    const basket = JSON.parse(localStorage.getItem('card'));
+    document.getElementById('heart-count').innerHTML = basket.length;
+}
+BasketCount();
